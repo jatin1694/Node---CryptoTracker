@@ -14,9 +14,9 @@ const coin_info = (coin_symbol, callback) => {
     })
 }
 
-coin_info('BTC', (error, data) => {
-    console.log(error)
-    console.log(data)
-})
+// coin_info('BTC', (error, data) => {
+//     console.log(error)
+//     console.log(data)
+// })
 
 module.exports = coin_info

@@ -5,6 +5,8 @@ const coin_info = (coin_symbol, callback) => {
     const url_key = url + '&api_key=' + api_key
 
     request({ url: url, json: true }, (error, response) => {
+        console.log(error)
+        console.log(response)
         if (error) {
             callback('Unable to obtain the coin information', undefined)
         } else {

@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 const coin_list = require('./utils/coin_list')
 const coin_info = require('./utils/coin_info')
+const get_logo = require('./utils/get_logo')
 
 app = express()
 
@@ -24,9 +25,31 @@ app.get('', (req, res) => {
                 data: error
             })
         } else {
-            res.render('index', {
-                data: data
+            var coin_ids = '';
+            data.forEach((coin) => {
+                coin_ids = coin_ids + ',' + coin.id;
             })
+
+            get_logo(coin_ids.substring(1), (error, metadata) => {
+                    if (error) {
+                        res.render('index', {
+                            data: error,
+                            metadata: error
+                        })
+                    } else {
+                        res.render('index', {
+                            data: data,
+                            metadata: metadata
+                        })
+                    }
+                })
+                // data.forEach((coin) => {
+                //     coin_info(coin, (error, response) => {
+                //         if (error) {
+
+            //         }
+            //     })
+            // })
         }
     })
 })

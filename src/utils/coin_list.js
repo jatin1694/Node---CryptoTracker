@@ -12,13 +12,13 @@ const coin_list = (callback) => {
         },
         json: true
     };
-
     rp(requestOptions).then(response => {
         //Returns first 30 coins
-        callback(undefined, response.data.slice(0, 40))
+        callback(undefined, response.data.slice(0, 30))
     }).catch((err) => {
         callback('Unable to obtain the coin list', undefined)
     });
+
 }
 
 coin_list((error, data) => {

@@ -1,4 +1,4 @@
-body {
-    color: #333333;
-    font-family: arial;
+.card {
+    margin: 10px;
+    text-align: center;
 }

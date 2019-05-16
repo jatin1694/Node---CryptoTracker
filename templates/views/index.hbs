@@ -3,25 +3,30 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
     <title>My Cryptotracker</title>
 </head>
 <body>
     <div class="container">
         {{>header}}
-        {{!-- <h3>{{data}}</h3> --}}
-        {{var i = 0}}
-        {{#each data}}
-            <div class="card" style="width: 33%;">
-                <img class="card-img-top" src={{metadata.data.this.id}}alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{this.name}}</h5>
-                    <p class="card-text">Price - {{this.quote.USD.price}}</p>
-                    <a href="#" class="btn btn-primary">Know More!</a>
-                </div>
+        <div class="container" >
+            <div class="row">
+
             </div>
-            <a href='/info/{{this}}'>{{this}}</a>
-        {{/each}}   
+            {{!-- {{#each data}}        
+                <div class="card" style="width: 31%;">
+                    {{!-- <img class="card-img-top" src={{metadata.data.this.id}}alt="Card image cap"> --}}
+                    {{!-- <div class="card-body"> --}}
+                        {{!-- <h5 class="card-title">{{this.name}}</h5> --}}
+                        {{!-- <p class="card-text">Price - {{this.quote.USD.price}}</p> --}}
+                        {{!-- <a href=href='/info/{{this}}' class="btn btn-primary">Know More!</a> --}}
+                    {{!-- </div> --}}
+                {{!-- </div> --}}
+            {{!-- {{/each}} --}}
+        </div>   
         <p>Made by Jatin Sadhwani</p>
+        </div>
     </div>
+    <script src="/js/script.js"></script>
 </body>
 </html>

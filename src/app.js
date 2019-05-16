@@ -19,39 +19,7 @@ hbs.registerPartials(partialsDirectory)
 app.use(express.static(publicDirectory))
 
 app.get('', (req, res) => {
-    coin_list((error, data) => {
-        if (error) {
-            res.render('index', {
-                data: error
-            })
-        } else {
-            var coin_ids = '';
-            data.forEach((coin) => {
-                coin_ids = coin_ids + ',' + coin.id;
-            })
-
-            get_logo(coin_ids.substring(1), (error, metadata) => {
-                    if (error) {
-                        res.render('index', {
-                            data: error,
-                            metadata: error
-                        })
-                    } else {
-                        res.render('index', {
-                            data: data,
-                            metadata: metadata
-                        })
-                    }
-                })
-                // data.forEach((coin) => {
-                //     coin_info(coin, (error, response) => {
-                //         if (error) {
-
-            //         }
-            //     })
-            // })
-        }
-    })
+    res.render('index')
 })
 
 
@@ -74,6 +42,20 @@ app.get('/info/:coin', (req, res) => {
 })
 
 
-app.listen(3500, () => {
+app.get('/coin_list', (req, res) => {
+    coin_list((error, data) => {
+        if (error) {
+            res.send({
+                data: error
+            })
+        } else {
+            res.send({
+                data: data
+            })
+        }
+    })
+})
+
+app.listen(3000, () => {
     console.log('Server is running!')
 })

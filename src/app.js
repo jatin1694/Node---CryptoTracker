@@ -19,7 +19,17 @@ hbs.registerPartials(partialsDirectory)
 app.use(express.static(publicDirectory))
 
 app.get('', (req, res) => {
-    res.render('index')
+    coin_list((error, data) => {
+        if (error) {
+            res.render('index', {
+                data: error
+            })
+        } else {
+            res.render('index', {
+                data: data
+            })
+        }
+    })
 })
 
 

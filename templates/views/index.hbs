@@ -11,18 +11,17 @@
         {{>header}}
         <div class="container" >
             <div class="row">
-
-            </div>
-            {{!-- {{#each data}}        
+            {{#each data}}        
                 <div class="card" style="width: 31%;">
                     {{!-- <img class="card-img-top" src={{metadata.data.this.id}}alt="Card image cap"> --}}
-                    {{!-- <div class="card-body"> --}}
-                        {{!-- <h5 class="card-title">{{this.name}}</h5> --}}
-                        {{!-- <p class="card-text">Price - {{this.quote.USD.price}}</p> --}}
-                        {{!-- <a href=href='/info/{{this}}' class="btn btn-primary">Know More!</a> --}}
-                    {{!-- </div> --}}
-                {{!-- </div> --}}
-            {{!-- {{/each}} --}}
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p id={{this.symbol}}class="card-text">Price - {{this.quote.USD.price}}</p>
+                        <a href='/info/{{this.symbol}}' class="btn btn-primary">Know More!</a>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
         </div>   
         <p>Made by Jatin Sadhwani</p>
         </div>
